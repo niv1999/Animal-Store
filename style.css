@@ -1,0 +1,180 @@
+/* Page Styling: */
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%; /* by default its aligning with the items size and not the whole page */
+    text-align: center;
+    background-image: linear-gradient(80deg, salmon, pink);
+    font-size: x-large;
+}
+
+/* Layout Styling: */
+.layout {
+    height: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 14% 79% 7%;
+}
+ /* Direct child, not the first one, but the one that is a direct child of section (header, aside, main, footer) */
+.layout, .layout > * {
+    border: 1px solid;
+}
+
+header, footer {
+    grid-column: span 6;
+}
+
+main {
+    grid-column: span 5;
+    overflow: auto; /* Auto toggle and fit into container */
+}
+
+
+/* Header Styling: */
+/* header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+/* Footer Styling: */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Menu Styling: */
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 40px;
+}
+
+/* To make sure the button stays blue and not auto colored by purple when its been entered */
+a {
+    color: blue;
+}
+
+a:hover {
+    color: purple;
+}
+
+/* The active page link is set to green */
+.active {
+    color: green;
+}
+
+/* Paragraph Styling: */
+.main-paragraph {
+    text-align: justify;
+    /* margin: 20px; All sides */
+    /* margin: 40px 20px; top+bottom, right+left */
+    margin: 40px 40px 70px 40px; /* top, right, bottom, left */
+}
+
+/* Animals Styling: */
+.animals-container{
+    display: flex;
+    flex-wrap: wrap; /* Breaks line based on page dimensions */
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.animals-container > img {
+    width: 180px;
+    height: 180px;
+    border: 1px solid;
+}
+
+/* Contact Us Styling: */
+.form-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* table, td {
+    border: 1px solid;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+input, textarea, button {
+    width: 300px; */
+/* } */
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 3fr 1fr;
+}
+
+form > div {
+    border: 1px solid;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input, textarea, button {
+    width: 400px;
+    font-size: x-large;
+}
+
+textarea {
+    height: 90%;
+}
+
+/* Element Name Selector: */
+span {
+    color: darkgreen;
+    font-weight: bold;
+}
+
+/* Class Selector: */
+.words-container {
+    position: absolute;
+    text-align: center;
+    margin-left: 30px;
+    bottom: 100px;
+    color: red;
+}
+
+/* Attribute Selector: */
+span[title] {
+    background-color: aqua;
+}
+
+/* ID Selector: */
+#now {
+    text-decoration: underline;
+}
+
+/* Pseudo Selector: */
+span:hover{
+    color: blue;
+}
+
+span::selection {
+    background-color: yellow;
+}
+
+span {
+    background-color: red !important;
+}
+
+ul {
+    display: inline-block;
+    color: darkviolet; /* Inherit */
+    border: 3px solid darkorange; /* Non-Inherit */
+}
+
+li {
+    border: inherit;
+}
